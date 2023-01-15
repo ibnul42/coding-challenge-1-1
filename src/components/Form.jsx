@@ -82,7 +82,7 @@ const Form = ({ id = "" }) => {
 
   const addUser = async (e) => {
     e.preventDefault()
-    if (inputValue.name.length < 1) {
+    if (inputValue.name.trim().length < 1) {
       toast.warning("Please input a name")
     } else if (inputValue.sectorName.length < 1) {
       toast.warning("Please select a sector")
@@ -100,7 +100,7 @@ const Form = ({ id = "" }) => {
 
   const updateUser = async (e) => {
     e.preventDefault()
-    if (inputValue.name.length < 1) {
+    if (inputValue.name.trim().length < 1) {
       toast.warning("Please input a name")
     } else if (inputValue.sectorName.length < 1) {
       toast.warning("Please select a sector")
