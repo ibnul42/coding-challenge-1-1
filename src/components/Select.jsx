@@ -30,7 +30,7 @@ const Select = ({
         onClick={() => setSelected(!selected)}
         id="dropdownDividerButton"
         data-dropdown-toggle="dropdownDivider"
-        className="px-4 py-2 text-center inline-flex items-center justify-between w-full border rounded-lg border-gray-400"
+        className="px-4 py-2 text-center inline-flex items-center justify-between w-full border rounded-lg border-gray-400 capitalize"
         type="button"
       >
         {inputValue.sectorName.trim().length > 0
@@ -53,8 +53,8 @@ const Select = ({
         </svg>
       </button>
       {selected && (
-        <div className="absolute z-10 bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600 w-full">
-          <ul className="py-1 text-sm text-gray-700 dark:text-gray-200 flex flex-col h-52 overflow-y-auto">
+        <div className="absolute z-10 bg-white divide-y divide-gray-100 rounded shadow w-full">
+          <ul className="py-1 text-sm text-gray-700 flex flex-col h-52 overflow-y-auto">
             {sectors &&
               sectors.map((item, index) => (
                 <li
@@ -65,7 +65,7 @@ const Select = ({
                   onClick={() => onItemClick(item.child, index, item)}
                 >
                   <div className="grid grid-cols-12">
-                    <a href="#!" className="col-span-11">
+                    <a href="#!" className="col-span-11 capitalize">
                       {item.name}
                     </a>
                     <div className="col-span-1">

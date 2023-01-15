@@ -23,21 +23,21 @@ const SubItem = ({ items, setSelected, setInputValue, inputValue }) => {
       <div className="pl-3">
         {items.length > 0 &&
           items.map((item, index) => (
-            <li
+            <div
               key={index}
               value={item.value}
               name={item.name}
               className={`relative cursor-pointer`}
               onClick={() => onItemClick(item.child, index, item)}
             >
-              <li
+              <div
                 className={`grid grid-cols-12 ${
                   item.name === inputValue.sectorName
                     ? "font-bold border bg-gray-200"
                     : ""
                 } hover:bg-gray-300 py-2 px-1`}
               >
-                <a href="#!" className="col-span-11">
+                <a href="#!" className="col-span-11 capitalize">
                   {item.name}
                 </a>
                 <div className="col-span-1">
@@ -63,7 +63,7 @@ const SubItem = ({ items, setSelected, setInputValue, inputValue }) => {
                     </svg>
                   )}
                 </div>
-              </li>
+              </div>
               {currentItem === index && subItem && (
                 <SubItem
                   items={subItem}
@@ -72,7 +72,7 @@ const SubItem = ({ items, setSelected, setInputValue, inputValue }) => {
                   inputValue={inputValue}
                 />
               )}
-            </li>
+            </div>
           ))}
       </div>
     )
